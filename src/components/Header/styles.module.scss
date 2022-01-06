@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 
   h1 {
     font-size: 1.5rem;
@@ -13,58 +14,51 @@
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation {
   display: flex;
   align-items: center;
+  list-style: none;
+  gap: 2rem;
 
-  ul {
+  margin-right: 4.25rem;
+
+  li {
     display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 2rem;
+    flex-direction: column;
 
-    margin-right: 4.25rem;
+    &::after {
+      content: '';
+      width: 0;
+      height: 1px;
+      background: var(--primary);
 
-    li {
-      display: flex;
-      flex-direction: column;
+      transition: width 0.4s;
+    }
+
+    &:hover {
+      cursor: pointer;
 
       &::after {
-        content: '';
-        width: 0;
-        height: 1px;
-        background: var(--primary);
-
-        transition: width 0.4s;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        &::after {
-          width: 80%;
-        }
+        width: 80%;
       }
     }
   }
 }
 
-.content-buttons {
+.action-buttons {
   display: flex;
-  align-items: stretch;
 
   button {
     width: 122px;
     height: 44px;
     border: 0;
-    outline: 0;
-    color: var(--primary);
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   .button-sign-in {

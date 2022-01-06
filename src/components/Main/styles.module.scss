@@ -35,26 +35,27 @@
 
   &::before {
     content: '';
-
     position: absolute;
     top: 0.5rem;
-    left: 9.75rem;
-    border-radius: 0.725rem;
-
+    
     width: 148px;
     height: 60px;
+    border-radius: 0.725rem;
     background: var(--secondary);
 
     transition: all 0.4s;
   }
 
-  &.active-first::before {
+  &.first::before {
     left: 0.5rem;
+  }
+
+  &.second::before {
+    left: 9.75rem;
   }
 
   button {
     text-align: center;
-    font-size: 1rem;
     font-weight: bold;
     color: var(--secondary);
 
@@ -67,10 +68,6 @@
     border-radius: 0.725rem;
     
     transition: all 0.4s;
-
-    &:hover {
-      cursor: pointer;
-    }
 
     &.active {
       color: var(--primary);
