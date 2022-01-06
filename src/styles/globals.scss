@@ -15,15 +15,12 @@ html {
 }
 
 :root {
-  --background: #f5f6fa;
-
-  --primary: #373D4F;
-  --secondary: #9098AE;
+  --primary: #FFFFFF;
+  --secondary: #621713;
 }
 
 body {
   color: var(--primary);
-  background: var(--background);
 }
 
 body, button, textarea, input {
