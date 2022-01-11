@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import styles from './styles.module.scss'
 
+type TypesButton = 'first' | 'second'
+
 export const Main = () => {
-  const [activeButton, setActiveButton] = useState<'first' | 'second'>('first')
+  const [buttonSelected, setButtonSelected] = useState<TypesButton>('first')
 
   return (
     <main className={styles.container}>
@@ -17,17 +19,11 @@ export const Main = () => {
         according to your schedule.
       </h2>
 
-      <div
-        className={`${styles.buttons} ${
-          activeButton === 'first' && styles['active-first']
-        }`}
-      >
+      <div className={`${styles.buttons} ${styles[buttonSelected]}`}>
         <button
           type="button"
-          className={`${styles['btn-first']} ${
-            activeButton === 'first' && styles.active
-          }`}
-          onClick={() => setActiveButton('first')}
+          onClick={() => setButtonSelected('first')}
+          className={buttonSelected === 'first' && styles.active}
         >
           One call
           <br />
@@ -35,10 +31,8 @@ export const Main = () => {
         </button>
         <button
           type="button"
-          className={`${styles['btn-second']} ${
-            activeButton === 'second' && styles.active
-          }`}
-          onClick={() => setActiveButton('second')}
+          onClick={() => setButtonSelected('second')}
+          className={buttonSelected === 'second' && styles.active}
         >
           Call Now
           <br />

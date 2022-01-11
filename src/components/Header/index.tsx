@@ -1,26 +1,22 @@
 import { useState } from 'react'
 import styles from './styles.module.scss'
 
-export const Navbar = () => {
+export const Header = () => {
   const [activeNavigationMobile, setActiveNavigationMobile] = useState(false)
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <h1>SaFe Travel.</h1>
 
-      <nav
-        className={`${styles.navigation} ${
-          activeNavigationMobile ? styles.active : ''
-        }`}
-      >
-        <ul>
+      <nav className={activeNavigationMobile ? styles.active : ''}>
+        <ul className={styles.navigation}>
           <li>Discover</li>
           <li>Special Deals</li>
           <li>Community</li>
           <li>About us</li>
         </ul>
 
-        <div className={styles['content-buttons']}>
+        <div className={styles['action-buttons']}>
           <button type="button" className={styles['button-sign-in']}>
             Sign In
           </button>
@@ -40,6 +36,6 @@ export const Navbar = () => {
         <span />
         <span />
       </button>
-    </div>
+    </header>
   )
 }
