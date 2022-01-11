@@ -8,4 +8,12 @@
 
   background: rgba(0, 0, 0, 0.5);
   padding: 54px 140px 140px;
+
+  @media(max-width: 1300px) {
+    padding: 40px 40px 80px;
+  }
+
+  @media(max-width: 600px) {
+    padding: 32px;
+  }
 }

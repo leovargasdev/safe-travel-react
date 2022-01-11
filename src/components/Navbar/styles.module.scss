@@ -4,6 +4,8 @@
   justify-content: space-between;
   width: 100%;
 
+  position: relative;
+
   h1 {
     font-size: 1.5rem;
     line-height: 1.75rem;
@@ -12,6 +14,17 @@
   li, button {
     font-size: 1.125rem;
     line-height: 1.5rem;
+  }
+
+  @media(max-width: 768px) {
+    h1 {
+      z-index: 100;
+    }
+  
+    li, button {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
   }
 }
 
@@ -48,6 +61,42 @@
         }
       }
     }
+
+    @media(max-width: 1300px) {
+      margin-right: 1rem;
+    }
+  }
+
+  @media(max-width: 768px) {
+    background: rgba(15, 15, 15, 0.98);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+
+    flex-direction: column;
+    padding: 2rem 0;
+
+    transform: translateX(-100vw);
+    transition: 0.4s all;
+
+    ul {
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      margin-right: 0;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  @media(max-width: 600px) {
+    padding: 1rem;
   }
 }
 
@@ -61,6 +110,7 @@
     border: 0;
     outline: 0;
     color: var(--primary);
+    border-radius: 0.5rem;
 
     &:hover {
       cursor: pointer;
@@ -72,11 +122,78 @@
   }
 
   .button-register {
-    border-radius: 0.5rem;
     background: var(--secondary);
 
     &:hover {
       filter: brightness(1.1);
     }
+  }
+
+  @media(max-width: 768px) {
+    gap: 1rem;
+
+    button {
+      width: 260px;
+      height: 32px;
+    }
+
+    .button-sign-in {
+      color: var(--secondary);
+      background: var(--primary);
+    }
+  }
+
+  @media(max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.button-mobile {
+  display: none;
+  visibility: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.25rem;
+  
+  height: 40px;
+  background: transparent;
+  z-index: 100;
+
+  span {
+    display: block;
+    height: 1px;
+    background: var(--primary);
+
+    transition: 0.4s all;
+    
+    &:first-child {
+      width: 20px;
+    }
+  
+    &:last-child {
+      width: 14px;
+    }
+  }
+
+  &.button-active span{
+    &:first-child {
+      transform: rotate(45deg) translate(1.5px, 0);
+    }
+  
+    &:last-child {
+      width: 20px;
+      transform: rotate(-45deg) translate(3px, -2px)
+    }
+  }
+
+  @media(max-width: 768px) {
+    display: flex;
+    visibility: visible;
   }
 }
