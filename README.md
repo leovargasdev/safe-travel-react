@@ -28,7 +28,7 @@
 
 ## 💻 Projeto
 
-Esse projeto foi desenvolvido durante uma live coding na [Twitch.tv](https://www.twitch.tv/oleovargas).
+Esse projeto foi desenvolvido durante uma live coding na [Twitch.tv](https://www.twitch.tv/leovargasdev).
 O protótipo desse website foi desenvolvido pela design [**Nevra Aslan**](https://dribbble.com/NevraBanuAslan), [clique aqui](https://dribbble.com/shots/15119302-Travel-Landing-Page) para abrir o protótipo no dribbble.
 
 Dependências usadas no projeto:
